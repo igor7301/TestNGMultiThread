@@ -1,6 +1,6 @@
 import application.ApplicationSetup;
 import org.testng.annotations.Test;
-import search.SearchHotel;
+import model.search.SearchHotel;
 
 /**
  * Created by Admin on 03.03.15.
