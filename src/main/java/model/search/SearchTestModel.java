@@ -5,7 +5,7 @@ import application.ApplicationSetup;
 /**
  * Created by Admin on 03.03.15.
  */
-public class SearchHotel extends ApplicationSetup implements Search {
+public class SearchTestModel extends ApplicationSetup implements SearchModel {
     private String a;
     private String url;
 
@@ -26,6 +26,11 @@ public class SearchHotel extends ApplicationSetup implements Search {
 
     @Override
     public void makeSearch() {
-        System.out.println(url + " bean param: " + getA());
+        System.out.println("bean param: " + getA());
+    }
+
+    @Override
+    public void makeSearch(String elem) {
+
     }
 }

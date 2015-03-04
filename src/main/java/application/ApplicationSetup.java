@@ -1,5 +1,6 @@
 package application;
 
+import model.setup.SetupTemplateModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.context.support.AbstractApplicationContext;
@@ -13,7 +14,7 @@ import java.util.Map;
  * Created by Admin on 03.03.15.
  */
 public class ApplicationSetup {
-    public static final String CONTEXT_PATH = "main-context.xml";
+     public static final String CONTEXT_PATH = "main-context.xml";
     public static Map<Long, Map<PARAM, Object>> THREAD_PARAM = new HashMap<Long, Map<PARAM, Object>>();
 
     enum PARAM {
@@ -39,6 +40,7 @@ public class ApplicationSetup {
             map.put(PARAM.WEBDRIVER, new FirefoxDriver());
 
             THREAD_PARAM.put(threadId, map);
+
         }
 
     }
@@ -59,5 +61,12 @@ public class ApplicationSetup {
             }
         }
     }
+
+    @BeforeSuite
+    public void beforeSuite() {
+
+    }
+
+
 
 }

@@ -1,6 +1,10 @@
 import application.ApplicationSetup;
+import model.search.SearchModel;
+import model.search.SearchRamblerModel;
+import model.setup.SetupModel;
+import model.setup.SetupTemplateModel;
 import org.testng.annotations.Test;
-import model.search.SearchHotel;
+import model.search.SearchTestModel;
 
 /**
  * Created by Admin on 03.03.15.
@@ -9,26 +13,30 @@ public class FullRegressionTest extends ApplicationSetup {
 
     @Test
     public void test1(){
-        ((SearchHotel)getBean("searchHotel")).loadUrl("http://www.rambler.ru");
-        ((SearchHotel)getBean("searchHotel")).setA("RAMBLER");
-        ((SearchHotel)getBean("searchHotel")).makeSearch();
+        ((SetupModel)getBean("setupTemplateModel")).loadURL("http://www.rambler.ru");
+        ((SearchModel)getBean("searchRamblerModel")).makeSearch();
+
+        ((SearchTestModel)getBean("searchTestModel")).setA("http://www.rambler.ru");
+        ((SearchModel)getBean("searchTestModel")).makeSearch();
+
+
     }
 
     @Test
     public void test2(){
-        ((SearchHotel)getBean("searchHotel")).loadUrl("http://www.google.com");
-        ((SearchHotel)getBean("searchHotel")).makeSearch();
+        ((SetupModel)getBean("setupTemplateModel")).loadURL("http://www.google.com");
+        ((SearchTestModel)getBean("searchTestModel")).makeSearch();
     }
 
     @Test
     public void test3(){
-        ((SearchHotel)getBean("searchHotel")).loadUrl("http://www.hotwire.ru");
-        ((SearchHotel)getBean("searchHotel")).makeSearch();
+        ((SetupModel)getBean("setupTemplateModel")).loadURL("http://www.hotwire.ru");
+        ((SearchModel)getBean("searchTestModel")).makeSearch();
     }
 
     @Test
     public void test4(){
-        ((SearchHotel)getBean("searchHotel")).loadUrl("http://www.expedia.com");
-        ((SearchHotel)getBean("searchHotel")).makeSearch();
+        ((SetupModel)getBean("setupTemplateModel")).loadURL("http://www.expedia.com");
+        ((SearchModel)getBean("searchTestModel")).makeSearch();
     }
 }
