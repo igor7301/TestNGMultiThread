@@ -15,7 +15,8 @@ public class MyListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
+        System.out.println("Allure listener for success tests");
+        Utils.makeScreenshot("Test_screenshot");
     }
 
     @Override

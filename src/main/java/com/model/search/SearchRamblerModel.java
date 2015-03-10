@@ -18,7 +18,7 @@ public class SearchRamblerModel extends ApplicationSetup implements SearchModel 
     @Override
     public void makeSearch() {
         new RamblerPage(getWebDriver()).makeSearch(((Data)getBean("data")).getElemForSearch());
-        throw new PendingException("exception");
+//        throw new PendingException("exception");
     }
 
     @Override
