@@ -1,14 +1,16 @@
+import application.AllureFailureTestListener;
 import application.ApplicationSetup;
 import model.search.SearchModel;
-import model.search.SearchRamblerModel;
 import model.setup.SetupModel;
-import model.setup.SetupTemplateModel;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import model.search.SearchTestModel;
 
 /**
  * Created by Admin on 03.03.15.
  */
+
+@Listeners(AllureFailureTestListener.class)
 public class FullRegressionTest extends ApplicationSetup {
 
     @Test
@@ -18,6 +20,7 @@ public class FullRegressionTest extends ApplicationSetup {
 
         ((SearchTestModel)getBean("searchTestModel")).setA("http://www.rambler.ru");
         ((SearchModel)getBean("searchTestModel")).makeSearch();
+        throw new RuntimeException("exception");
 
 
     }
