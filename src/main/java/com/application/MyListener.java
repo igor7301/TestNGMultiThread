@@ -7,7 +7,7 @@ import org.testng.ITestResult;
 /**
  * Created by Admin on 10.03.15.
  */
-public class AllureFailureTestListener implements ITestListener {
+public class MyListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
 

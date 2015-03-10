@@ -1,18 +1,19 @@
 package test;
 
-//import com.application.AllureFailureTestListener;
+
 import com.application.ApplicationSetup;
 import com.model.search.SearchModel;
 import com.model.setup.SetupModel;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.model.search.SearchTestModel;
+import com.application.MyListener;
 
 /**
  * Created by Admin on 03.03.15.
  */
 
-//@Listeners({com.application.AllureFailureTestListener.class})
+@Listeners(com.application.MyListener.class)
 public class FullRegressionTest extends ApplicationSetup {
 
     @Test
