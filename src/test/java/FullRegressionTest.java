@@ -10,7 +10,7 @@ import com.model.search.SearchTestModel;
  * Created by Admin on 03.03.15.
  */
 
-@Listeners(AllureFailureTestListener.class)
+@Listeners(com.application.AllureFailureTestListener.class)
 public class FullRegressionTest extends ApplicationSetup {
 
     @Test
