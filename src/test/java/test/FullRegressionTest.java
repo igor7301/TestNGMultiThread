@@ -23,7 +23,7 @@ public class FullRegressionTest extends ApplicationSetup {
 
         ((SearchTestModel)getBean("searchTestModel")).setA("http://www.rambler.ru");
         ((SearchModel)getBean("searchTestModel")).makeSearch();
-        throw new RuntimeException("exception");
+
 
 
     }
