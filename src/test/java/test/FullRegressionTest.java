@@ -1,6 +1,6 @@
 package test;
 
-import com.application.AllureFailureTestListener;
+//import com.application.AllureFailureTestListener;
 import com.application.ApplicationSetup;
 import com.model.search.SearchModel;
 import com.model.setup.SetupModel;
@@ -12,7 +12,7 @@ import com.model.search.SearchTestModel;
  * Created by Admin on 03.03.15.
  */
 
-@Listeners({com.application.AllureFailureTestListener.class})
+//@Listeners({com.application.AllureFailureTestListener.class})
 public class FullRegressionTest extends ApplicationSetup {
 
     @Test
