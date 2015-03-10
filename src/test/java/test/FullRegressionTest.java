@@ -1,3 +1,5 @@
+package test;
+
 import com.application.AllureFailureTestListener;
 import com.application.ApplicationSetup;
 import com.model.search.SearchModel;
