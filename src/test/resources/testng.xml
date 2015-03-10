@@ -2,10 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="FullRegression"  parallel="methods" thread-count="2" >
-    <listeners>
-        <listener class-name="com.application.AllureFailureTestListener"></listener>
-    </listeners>
-    <test name="Full Regression">
+       <test name="Full Regression">
         <classes>
             <class name="test.FullRegressionTest" >
 
