@@ -9,7 +9,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 public final class Utils extends ApplicationSetup {
     private Utils() {}
 
-    @Attachment(value = "{0}", type = "image/png")
+    @Attachment(value = "Failed_screen", type = "image/png")
     public static byte[] makeScreenshot(String name) {
         return ((TakesScreenshot) THREAD_PARAM.get(Thread.currentThread().getId())
                 .get(PARAM.WEBDRIVER))
