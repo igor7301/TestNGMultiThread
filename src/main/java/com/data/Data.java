@@ -1,4 +1,4 @@
-package data;
+package com.data;
 
 /**
  * Created by v-ikomarov on 3/3/2015.

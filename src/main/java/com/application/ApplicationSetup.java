@@ -1,6 +1,5 @@
-package application;
+package com.application;
 
-import model.setup.SetupTemplateModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.context.support.AbstractApplicationContext;

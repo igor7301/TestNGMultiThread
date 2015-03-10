@@ -1,10 +1,10 @@
-import application.AllureFailureTestListener;
-import application.ApplicationSetup;
-import model.search.SearchModel;
-import model.setup.SetupModel;
+import com.application.AllureFailureTestListener;
+import com.application.ApplicationSetup;
+import com.model.search.SearchModel;
+import com.model.setup.SetupModel;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import model.search.SearchTestModel;
+import com.model.search.SearchTestModel;
 
 /**
  * Created by Admin on 03.03.15.

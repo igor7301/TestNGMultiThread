@@ -1,4 +1,4 @@
-package model.search;
+package com.model.search;
 
 /**
  * Created by Admin on 03.03.15.

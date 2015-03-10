@@ -1,4 +1,4 @@
-package model.setup;
+package com.model.setup;
 
 /**
  * Created by v-ikomarov on 3/3/2015.

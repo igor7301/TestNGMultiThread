@@ -3,13 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       <bean class="model.search.SearchTestModel" id="searchTestModel">
+       <bean class="com.model.search.SearchTestModel" id="searchTestModel">
               <property name="a" value="default"></property>
        </bean>
-       <bean class="model.search.SearchRamblerModel" id="searchRamblerModel"></bean>
-       <bean class="data.Data" id="data">
+       <bean class="com.model.search.SearchRamblerModel" id="searchRamblerModel"></bean>
+       <bean class="com.data.Data" id="data">
               <property name="elemForSearch" value="hello world"></property>
        </bean>
-       <bean class="model.setup.SetupTemplateModel" id="setupTemplateModel"></bean>
+       <bean class="com.model.setup.SetupTemplateModel" id="setupTemplateModel"></bean>
 
 </beans>

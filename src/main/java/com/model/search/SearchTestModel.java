@@ -1,6 +1,6 @@
-package model.search;
+package com.model.search;
 
-import application.ApplicationSetup;
+import com.application.ApplicationSetup;
 
 /**
  * Created by Admin on 03.03.15.

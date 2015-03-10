@@ -1,8 +1,8 @@
-package model.search;
+package com.model.search;
 
-import application.ApplicationSetup;
-import data.Data;
-import pageObjects.RamblerPage;
+import com.application.ApplicationSetup;
+import com.data.Data;
+import com.pageObjects.RamblerPage;
 
 /**
  * Created by v-ikomarov on 3/3/2015.
@@ -16,7 +16,7 @@ public class SearchRamblerModel extends ApplicationSetup implements SearchModel 
 
     @Override
     public void makeSearch() {
-        new RamblerPage(getWebDriver()).makeSearch(((Data)getBean("data")).getElemForSearch());
+        new RamblerPage(getWebDriver()).makeSearch(((Data)getBean("com/data")).getElemForSearch());
     }
 
     @Override

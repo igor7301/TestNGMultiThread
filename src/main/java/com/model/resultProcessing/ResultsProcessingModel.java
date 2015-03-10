@@ -1,4 +1,4 @@
-package model.resultProcessing;
+package com.model.resultProcessing;
 
 /**
  * Created by Admin on 04.03.15.

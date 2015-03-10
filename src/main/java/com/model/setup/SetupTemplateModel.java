@@ -1,6 +1,6 @@
-package model.setup;
+package com.model.setup;
 
-import application.ApplicationSetup;
+import com.application.ApplicationSetup;
 
 /**
  * Created by v-ikomarov on 3/3/2015.
