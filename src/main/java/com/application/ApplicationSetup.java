@@ -43,8 +43,10 @@ public class ApplicationSetup {
             try {
                 map.put(PARAM.WEBDRIVER, new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
                         DesiredCapabilities.firefox()));
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+//                e.printStackTrace();
+                map.put(PARAM.WEBDRIVER, new FirefoxDriver());
+
             }
 
             THREAD_PARAM.put(threadId, map);
