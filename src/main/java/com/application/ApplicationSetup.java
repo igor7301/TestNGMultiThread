@@ -2,10 +2,14 @@ package com.application;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.*;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +40,12 @@ public class ApplicationSetup {
 
             Map<PARAM, Object> map = new HashMap<PARAM, Object>();
             map.put(PARAM.CONTEXT, new ClassPathXmlApplicationContext(CONTEXT_PATH));
-            map.put(PARAM.WEBDRIVER, new FirefoxDriver());
+            try {
+                map.put(PARAM.WEBDRIVER, new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+                        DesiredCapabilities.firefox()));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
 
             THREAD_PARAM.put(threadId, map);
 
