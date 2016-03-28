@@ -5,17 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Created by v-ikomarov on 3/3/2015.
+ * Created by IKomarov on 28.03.2016.
  */
-public class RamblerPage extends  AbstractPage {
+public class YandexPage extends  AbstractPage {
 
-    @FindBy (css = "#search_query")
+    @FindBy(css = ".search2__input .input__box .input__control.input__input")
     private WebElement search;
 
-    @FindBy (css = ".b-search__submit")
+    @FindBy (css = ".button.suggest2-form__button")
     private WebElement submit;
 
-    public RamblerPage(WebDriver driver) {
+    public YandexPage(WebDriver driver) {
         super(driver);
     }
 
@@ -29,6 +29,4 @@ public class RamblerPage extends  AbstractPage {
         }
 
     }
-
-
 }

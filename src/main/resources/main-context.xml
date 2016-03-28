@@ -7,6 +7,9 @@
               <property name="a" value="default"></property>
        </bean>
        <bean class="com.model.search.SearchRamblerModel" id="searchRamblerModel"></bean>
+       <bean class="com.model.search.SearchYandexModel" id="searchYandexModel"></bean>
+       <bean class="com.model.search.SearchGoogleModel" id="searchGoogleModel"></bean>
+
        <bean class="com.data.Data" id="data">
               <property name="elemForSearch" value="hello world"></property>
        </bean>

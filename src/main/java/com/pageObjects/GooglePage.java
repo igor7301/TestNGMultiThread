@@ -1,28 +1,30 @@
 package com.pageObjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Created by v-ikomarov on 3/3/2015.
+ * Created by IKomarov on 28.03.2016.
  */
-public class RamblerPage extends  AbstractPage {
-
-    @FindBy (css = "#search_query")
+public class GooglePage extends AbstractPage {
+    @FindBy(css = "#lst-ib")
     private WebElement search;
 
-    @FindBy (css = ".b-search__submit")
+    @FindBy (css = "input[name='btnK']")
     private WebElement submit;
 
-    public RamblerPage(WebDriver driver) {
+    public GooglePage(WebDriver driver) {
         super(driver);
     }
 
     public void makeSearch(String elem) {
         try {
             search.sendKeys(elem);
-            submit.click();
+            search.sendKeys(Keys.ENTER);
+            //submit.click();
+
         }
         catch (Exception e) {
             e.printStackTrace();
