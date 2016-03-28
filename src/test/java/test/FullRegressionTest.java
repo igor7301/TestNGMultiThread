@@ -3,7 +3,9 @@ package test;
 
 import com.application.ApplicationSetup;
 import com.model.search.SearchModel;
+import com.model.search.SearchRamblerModel;
 import com.model.setup.SetupModel;
+import com.model.setup.SetupTemplateModel;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.model.search.SearchTestModel;
@@ -24,8 +26,9 @@ public class FullRegressionTest extends ApplicationSetup {
 
         while (true) {
             try {
-                ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.rambler.ru");
-                ((SearchModel) getBean("searchRamblerModel")).makeSearch();
+                SetupTemplateModel.getInstance().loadURL("http://www.rambler.ru");
+                SearchRamblerModel.getInstance().makeSearch();
+
 
             }
             catch (Exception e) {
