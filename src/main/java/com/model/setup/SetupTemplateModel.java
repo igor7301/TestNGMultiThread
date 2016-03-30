@@ -1,6 +1,7 @@
 package com.model.setup;
 
 import com.application.ApplicationSetup;
+import com.pageObjects.SurfEarnerPage;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
@@ -18,6 +19,14 @@ public class SetupTemplateModel extends ApplicationSetup implements SetupModel, 
     @Override
     public void loadURL(String url) {
         getWebDriver().navigate().to(url);
+    }
+
+    @Override
+    public void loginToSurfEarner(String email, String password) {
+        SurfEarnerPage surfEarnerPage = new SurfEarnerPage(getWebDriver());
+        surfEarnerPage.login(email, password);
+
+
     }
 
     public void afterPropertiesSet() throws Exception {

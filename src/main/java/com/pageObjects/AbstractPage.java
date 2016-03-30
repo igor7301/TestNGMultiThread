@@ -1,6 +1,7 @@
 package com.pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -19,6 +20,25 @@ public class AbstractPage {
     public AbstractPage(WebDriver driver, By locator) {
         this.webDriver = driver;
         PageFactory.initElements(new CustomElementLocatorFactory(driver.findElement(locator)), this);
+    }
+
+
+    public void scrollPageToTheBottom() throws Exception{
+        ((JavascriptExecutor)webDriver).executeScript("function f() {" +
+                " window.scrollTo(0, document.body.scrollHeight);" +
+                " setTimeout(function(){" +
+                " if ($(window).scrollTop() != $(document).height()-$(window).height()){" +
+                " f();" +
+                " }" +
+                " }" +
+                " , 500);" +
+                " }" +
+                "f()");
+
+    }
+
+    public void scrollPageToTheTop() throws Exception{
+        ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, 0);");
     }
 
     protected WebDriver getWebDriver() {

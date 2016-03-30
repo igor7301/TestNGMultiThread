@@ -3,8 +3,12 @@ package com.model.search;
 import com.application.ApplicationSetup;
 import com.data.Data;
 import com.pageObjects.RamblerPage;
+import com.pageObjects.RandomPage;
+import com.results.RamblerResultPage;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.InitializingBean;
-import sun.security.util.PendingException;
+
+import java.util.Random;
 
 /**
  * Created by v-ikomarov on 3/3/2015.
@@ -21,7 +25,6 @@ public class SearchRamblerModel extends ApplicationSetup implements SearchModel,
     @Override
     public void makeSearch() {
         new RamblerPage(getWebDriver()).makeSearch(((Data)getBean("data")).getElemForSearch());
-//        throw new PendingException("exception");
     }
 
     @Override
@@ -36,4 +39,13 @@ public class SearchRamblerModel extends ApplicationSetup implements SearchModel,
     public static SearchRamblerModel getInstance() {
         return instance;
     }
+
+    public void chooseRandomResult() {
+        RamblerResultPage ramblerResultPage = new RamblerResultPage(getWebDriver());
+        ramblerResultPage.chooseResult(new Random(System.currentTimeMillis()).nextInt(ramblerResultPage.getSizeOfResults()));
+    }
+
+
+
+
 }
