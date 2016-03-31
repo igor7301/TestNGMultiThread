@@ -1,11 +1,10 @@
-package com.model.search;
+package com.model.search.web;
 
 import com.application.ApplicationSetup;
 import com.data.Data;
+import com.model.search.SearchModel;
 import com.pageObjects.RamblerPage;
-import com.pageObjects.RandomPage;
-import com.results.RamblerResultPage;
-import org.openqa.selenium.WebDriver;
+import com.pageObjects.RamblerResultPage;
 import org.springframework.beans.factory.InitializingBean;
 
 import java.util.Random;

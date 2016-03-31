@@ -10,7 +10,7 @@ import org.springframework.beans.factory.InitializingBean;
 public class SetupTemplateModel extends ApplicationSetup implements SetupModel, InitializingBean {
 
 
-    private static  SetupTemplateModel instance;
+    private static  SetupModel instance;
 
     public SetupTemplateModel() {
         System.out.println("Setup template model");
@@ -25,8 +25,6 @@ public class SetupTemplateModel extends ApplicationSetup implements SetupModel, 
     public void loginToSurfEarner(String email, String password) {
         SurfEarnerPage surfEarnerPage = new SurfEarnerPage(getWebDriver());
         surfEarnerPage.login(email, password);
-
-
     }
 
     public void afterPropertiesSet() throws Exception {
@@ -34,7 +32,8 @@ public class SetupTemplateModel extends ApplicationSetup implements SetupModel, 
         instance = this;
     }
 
-    public static SetupTemplateModel getInstance() {
+
+    public static SetupModel getInstance() {
         return instance;
     }
 }

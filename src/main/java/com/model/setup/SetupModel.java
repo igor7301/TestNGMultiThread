@@ -8,4 +8,5 @@ public interface SetupModel {
     public void loadURL(String url);
 
     public void loginToSurfEarner(String email, String password);
+
 }

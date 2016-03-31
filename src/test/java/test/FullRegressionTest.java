@@ -4,7 +4,7 @@ package test;
 import com.application.ApplicationSetup;
 import com.data.WebDriverUtil;
 import com.model.search.SearchModel;
-import com.model.search.SearchRamblerModel;
+import com.model.search.web.SearchRamblerModel;
 import com.model.setup.SetupModel;
 import com.model.setup.SetupTemplateModel;
 import org.testng.annotations.Listeners;
@@ -23,8 +23,9 @@ public class FullRegressionTest extends ApplicationSetup {
     private String password = "";
 
     private void loginToSurfEarner() {
-        SetupTemplateModel.getInstance().loadURL("http://www.surfearner.com/login/");
-        SetupTemplateModel.getInstance().loginToSurfEarner(email, password);
+
+        ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.surfearner.com/login/");
+        ((SetupModel) getBean("setupTemplateModel")).loginToSurfEarner(email, password);
     }
 
     @Test
@@ -32,8 +33,10 @@ public class FullRegressionTest extends ApplicationSetup {
 
 
         loginToSurfEarner();
-        SetupTemplateModel.getInstance().loadURL("http://www.rambler.ru");
-        SearchRamblerModel.getInstance().makeSearch();
+        ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.rambler.ru");
+        ((SearchRamblerModel) getBean("searchRamblerModel")).makeSearch();
+//        SetupTemplateModel.getInstance().loadURL("http://www.rambler.ru");
+//        SearchRamblerModel.getInstance().makeSearch();
 
         int i = 0 ;
         while (true) {

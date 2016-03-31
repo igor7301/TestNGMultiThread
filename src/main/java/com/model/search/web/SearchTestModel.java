@@ -1,6 +1,7 @@
-package com.model.search;
+package com.model.search.web;
 
 import com.application.ApplicationSetup;
+import com.model.search.SearchModel;
 
 /**
  * Created by Admin on 03.03.15.

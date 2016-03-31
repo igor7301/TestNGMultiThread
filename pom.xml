@@ -20,6 +20,25 @@
         <!--<logger.level>ERROR</logger.level>-->
     </properties>
 
+
+    <profiles>
+        <profile>
+            <id>WEB</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profile>web</spring.profile>
+            </properties>
+        </profile>
+        <profile>
+            <id>MOBILE</id>
+            <properties>
+                <spring.profile>mobile</spring.profile>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <directory>${baseFolder}/target</directory>
         <plugins>
@@ -144,5 +163,8 @@
             </plugin>
         </plugins>
     </reporting>
+
+
+
 
 </project>
