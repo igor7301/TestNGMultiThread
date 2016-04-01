@@ -52,7 +52,7 @@ public class FullRegressionTest extends ApplicationSetup {
                 }
                 else {
                     new WebDriverUtil().closeAllTabs();
-                    SearchRamblerModel.getInstance().makeSearch();
+                    ((SearchRamblerModel) getBean("searchRamblerModel")).makeSearch();
                     i = 0;
                 }
 

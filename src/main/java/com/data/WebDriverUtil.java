@@ -24,10 +24,12 @@ public class WebDriverUtil extends ApplicationSetup{
         RandomPage randomPage = new RandomPage(webDriver);
 
         try {
-            randomPage.scrollPageToTheBottom();
-            Thread.sleep(100000);
+            for (double i = 0; i < 100; i ++) {
+                randomPage.scrollPageDown(i, i+1);
+                Thread.sleep(100);
+            }
             randomPage.scrollPageToTheTop();
-            Thread.sleep(100000);
+            Thread.sleep(1000);
         } catch (Exception e) {
 
         }
