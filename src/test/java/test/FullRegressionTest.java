@@ -2,6 +2,7 @@ package test;
 
 
 import com.application.ApplicationSetup;
+import com.data.Beans;
 import com.data.WebDriverUtil;
 import com.model.search.SearchModel;
 import com.model.search.web.SearchRamblerModel;
@@ -23,16 +24,22 @@ public class FullRegressionTest extends ApplicationSetup {
     private String password = "";
 
     private void loginToSurfEarner() {
+        ((SetupModel) getBean("setupTemplateModel")).printTestMessage();
 
         ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.surfearner.com/login/");
         ((SetupModel) getBean("setupTemplateModel")).loginToSurfEarner(email, password);
+
+
+
     }
 
     @Test
     public void test1() {
 
 
+        ((SetupModel) getBean("setupTemplateModel")).setMessage("TEST1");
         loginToSurfEarner();
+
         ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.rambler.ru");
         ((SearchRamblerModel) getBean("searchRamblerModel")).makeSearch();
 //        SetupTemplateModel.getInstance().loadURL("http://www.rambler.ru");

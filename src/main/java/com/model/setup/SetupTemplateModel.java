@@ -2,18 +2,21 @@ package com.model.setup;
 
 import com.application.ApplicationSetup;
 import com.pageObjects.SurfEarnerPage;
-import org.springframework.beans.factory.InitializingBean;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
 
 /**
  * Created by v-ikomarov on 3/3/2015.
  */
-public class SetupTemplateModel extends ApplicationSetup implements SetupModel, InitializingBean {
+public class SetupTemplateModel extends ApplicationSetup implements SetupModel {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(SetupTemplateModel.class);
+    private String message;
 
-    private static  SetupModel instance;
 
     public SetupTemplateModel() {
-        System.out.println("Setup template model");
+        LOGGER.info("Setup template model constructor");
     }
 
     @Override
@@ -27,13 +30,12 @@ public class SetupTemplateModel extends ApplicationSetup implements SetupModel, 
         surfEarnerPage.login(email, password);
     }
 
-    public void afterPropertiesSet() throws Exception {
-
-        instance = this;
+    @Override
+    public void printTestMessage() {
+        LOGGER.info("Test message: " + message);
     }
 
-
-    public static SetupModel getInstance() {
-        return instance;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

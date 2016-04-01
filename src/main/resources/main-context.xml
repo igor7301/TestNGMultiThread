@@ -21,7 +21,10 @@
                      <property name="elemForSearch" value="hello world"></property>
               </bean>
 
-              <bean class="com.model.setup.SetupTemplateModel" id="setupTemplateModel"/>
+
+              <bean class="com.model.setup.SetupTemplateModel" id="setupTemplateModel">
+                     <property name="message" value="INITIAL STATE"></property>
+              </bean>
        </beans>
 
        <beans profile="mobile">
@@ -35,6 +38,7 @@
               <bean class="com.data.Data" id="data">
                      <property name="elemForSearch" value="hello world"></property>
               </bean>
+
 
               <bean class="com.model.setup.SetupTemplateModelMobile" id="setupTemplateModel"/>
        </beans>

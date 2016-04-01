@@ -9,4 +9,9 @@ public interface SetupModel {
 
     public void loginToSurfEarner(String email, String password);
 
+    public void printTestMessage();
+
+    public void setMessage(String message);
+
+
 }

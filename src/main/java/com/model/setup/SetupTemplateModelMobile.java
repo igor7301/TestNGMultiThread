@@ -1,13 +1,9 @@
 package com.model.setup;
 
-import org.springframework.beans.factory.InitializingBean;
-
 /**
  * Created by IKomarov on 31.03.2016.
  */
-public class SetupTemplateModelMobile implements SetupModel, InitializingBean {
-
-    private static SetupModel instance;
+public class SetupTemplateModelMobile implements SetupModel{
 
     @Override
     public void loadURL(String url) {
@@ -19,11 +15,15 @@ public class SetupTemplateModelMobile implements SetupModel, InitializingBean {
         throw  new RuntimeException("Implement mee!!!");
     }
 
-    public void afterPropertiesSet() throws Exception {
-        instance = this;
+    @Override
+    public void printTestMessage() {
+        throw  new RuntimeException("Implement mee!!!");
     }
 
-    public static SetupModel getInstance() {
-        return instance;
+    @Override
+    public void setMessage(String message) {
+        throw  new RuntimeException("Implement mee!!!");
     }
+
+
 }
