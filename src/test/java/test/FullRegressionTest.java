@@ -41,15 +41,13 @@ public class FullRegressionTest extends ApplicationSetup {
 
         ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.rambler.ru");
         ((SearchRamblerModel) getBean("searchRamblerModel")).makeSearch();
-//        SetupTemplateModel.getInstance().loadURL("http://www.rambler.ru");
-//        SearchRamblerModel.getInstance().makeSearch();
 
         int i = 0 ;
         while (true) {
             try {
 
                 if (i < MAX_AMOUNT_OF_TABS) {
-                    SearchRamblerModel.getInstance().chooseRandomResult();
+                    ((SearchRamblerModel) getBean("searchRamblerModel")).chooseRandomResult();
                     new WebDriverUtil().makeActivityInAllTabs();
                 }
                 else {
