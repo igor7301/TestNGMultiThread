@@ -2,7 +2,6 @@ package test;
 
 
 import com.application.ApplicationSetup;
-import com.data.Beans;
 import com.data.WebDriverUtil;
 import com.model.search.SearchModel;
 import com.model.search.web.SearchRamblerModel;
