@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,12 +29,18 @@ public class WebDriverFactory {
     }
 
     public static WebDriver getChromeWebDriver() {
+
+
+
         DesiredCapabilities capabilities = null;
-        String pathToChromeDriver = "D:\\Personal\\chromedriver_win32\\chromedriver.exe";
-        String pathToSerfEarnerExtension = "D:\\Personal\\extensionSerfEarner.crx";
+//        String pathToChromeDriver = "D:\\Personal\\chromedriver_win32\\chromedriver.exe";
+        String pathToChromeDriver = "/Users/Igor/Downloads/chromedriver";
+//        String pathToSerfEarnerExtension = "D:\\Personal\\extensionSerfEarner.crx";
+        String pathToSerfEarnerExtension = "/Users/Igor/IdeaProjects/extensionSurfEarner.crx";
         System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
         capabilities = new DesiredCapabilities();
         ChromeOptions options = new ChromeOptions();
+        WebDriver webDriver;
 
         options.addArguments("start-maximized");
 
@@ -48,13 +55,20 @@ public class WebDriverFactory {
 
         try {
             LOGGER.info("Chrome driver is running...");
-            return new ChromeDriver(capabilities);
+            webDriver = new ChromeDriver(capabilities);
         }
         catch (IllegalStateException e) {
             LOGGER.warn("Chrome driver isn't found at the path: " + pathToChromeDriver + ". Firefox driver is running instead.....");
-            return getFirefoxWebDriver();
+            webDriver = getFirefoxWebDriver();
 
         }
+
+        EventFiringWebDriver overridedDriver = new EventFiringWebDriver(webDriver);
+
+        overridedDriver.register(new EventListener());
+
+        return overridedDriver;
+
 
 
     }

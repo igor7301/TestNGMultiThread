@@ -10,18 +10,19 @@ import com.pageObjects.YandexPage;
  * Created by IKomarov on 28.03.2016.
  */
 public class SearchGoogleModel extends ApplicationSetup implements SearchModel {
-    @Override
     public void loadUrl(String url) {
 
     }
 
-    @Override
     public void makeSearch() {
         new GooglePage(getWebDriver()).makeSearch(((Data)getBean("data")).getElemForSearch());
     }
 
-    @Override
     public void makeSearch(String elem) {
+        throw  new RuntimeException("Implement mee!!!");
+    }
 
+    public void chooseResult(int number) {
+        throw  new RuntimeException("Implement mee!!!");
     }
 }

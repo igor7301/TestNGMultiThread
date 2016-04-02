@@ -16,19 +16,20 @@ public class SearchRamblerModel extends ApplicationSetup implements SearchModel,
 
     private static SearchRamblerModel instance;
 
-    @Override
     public void loadUrl(String url) {
 
     }
 
-    @Override
     public void makeSearch() {
         new RamblerPage(getWebDriver()).makeSearch(((Data)getBean("data")).getElemForSearch());
     }
 
-    @Override
     public void makeSearch(String elem) {
         new RamblerPage(getWebDriver()).makeSearch(elem);
+    }
+
+    public void chooseResult(int number) {
+        throw  new RuntimeException("Implement mee!!!");
     }
 
     public void afterPropertiesSet() throws Exception {

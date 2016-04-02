@@ -24,10 +24,13 @@ public class WebDriverUtil extends ApplicationSetup{
         RandomPage randomPage = new RandomPage(webDriver);
 
         try {
-            for (double i = 0; i < 100; i ++) {
-                randomPage.scrollPageDown(i, i+1);
-                Thread.sleep(100);
-            }
+//            for (double i = 0; i < 100; i ++) {
+//                randomPage.scrollPageDown(i, i+1);
+//                Thread.sleep(100);
+//            }
+
+            randomPage.scrollPageToTheBottom();
+            Thread.sleep(1000);
             randomPage.scrollPageToTheTop();
             Thread.sleep(1000);
         } catch (Exception e) {
@@ -39,10 +42,11 @@ public class WebDriverUtil extends ApplicationSetup{
     public void makeActivityInAllTabs() {
         String mainWindowHandler =   getWebDriver().getWindowHandle();
         for (String currentWindowHandler : getWebDriver().getWindowHandles()) {
-            if(!mainWindowHandler.equals(currentWindowHandler)) {
                 makeActivityInRandomTab(getWebDriver().switchTo().window(currentWindowHandler));
-            }
         }
         getWebDriver().switchTo().window(mainWindowHandler);
     }
+
+
+
 }

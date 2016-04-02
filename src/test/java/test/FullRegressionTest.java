@@ -4,6 +4,7 @@ package test;
 import com.application.ApplicationSetup;
 import com.data.WebDriverUtil;
 import com.model.search.SearchModel;
+import com.model.search.web.SearchDromModel;
 import com.model.search.web.SearchRamblerModel;
 import com.model.setup.SetupModel;
 import com.model.setup.SetupTemplateModel;
@@ -20,7 +21,7 @@ public class FullRegressionTest extends ApplicationSetup {
     public static final int MAX_AMOUNT_OF_TABS = 20;
     private int DELAY_BTW_REPEATING = 2000;
     private String email = "igor7301@gmail.com";
-    private String password = "";
+    private String password = "codtQl1fkybgh";
 
     private void loginToSurfEarner() {
         ((SetupModel) getBean("setupTemplateModel")).printTestMessage();
@@ -28,6 +29,18 @@ public class FullRegressionTest extends ApplicationSetup {
         ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.surfearner.com/login/");
         ((SetupModel) getBean("setupTemplateModel")).loginToSurfEarner(email, password);
 
+
+
+    }
+
+    @Test
+    public void testDromSite() {
+
+        loginToSurfEarner();
+
+        ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.omsk.drom.ru/auto/");
+        ((SearchDromModel) getBean("searchDromModel")).makeSearch();
+            ((SearchDromModel) getBean("searchDromModel")).handleAllResults();
 
 
     }

@@ -28,16 +28,16 @@ public class AbstractPage {
 
     public void scrollPageDown(double from, double to) throws Exception{
 
-        LOGGER.info("From : " + from / 100 + "To : "  + to / 100);
+        LOGGER.info("From : " + from / 100 + "  To : "  + to / 100);
 
         ((JavascriptExecutor)webDriver).executeScript("function f() {" +
-                " window.scrollTo(document.body.scrollHeight*" + from / 100 + ", document.body.scrollHeight*" + to / 100 + ");" +
+                " window.scrollBy(0, document.body.scrollHeight);" +
                 " setTimeout(function(){" +
                 " if ($(window).scrollTop() != $(document).height()-$(window).height()){" +
                 " f();" +
                 " }" +
                 " }" +
-                " , 500);" +
+                " , 20500);" +
                 " }" +
                 "f()");
 
@@ -54,5 +54,10 @@ public class AbstractPage {
 
     protected WebDriver getWebDriver() {
         return webDriver;
+    }
+
+
+    public void goBack() {
+        getWebDriver().navigate().back();
     }
 }

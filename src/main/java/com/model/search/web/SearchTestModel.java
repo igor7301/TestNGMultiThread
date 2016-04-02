@@ -18,20 +18,21 @@ public class SearchTestModel extends ApplicationSetup implements SearchModel {
         this.a = a;
     }
 
-    @Override
     public void loadUrl(String url) {
         this.url = url;
         getWebDriver().navigate().to(url);
 
     }
 
-    @Override
     public void makeSearch() {
         System.out.println("bean param: " + getA());
     }
 
-    @Override
     public void makeSearch(String elem) {
+        throw  new RuntimeException("Implement mee!!!");
+    }
 
+    public void chooseResult(int number) {
+        throw  new RuntimeException("Implement mee!!!");
     }
 }

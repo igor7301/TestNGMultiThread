@@ -11,4 +11,6 @@ public interface SearchModel {
 
     public void makeSearch(String elem);
 
+    void chooseResult(int number);
+
 }
