@@ -21,7 +21,7 @@ public class FullRegressionTest extends ApplicationSetup {
     public static final int MAX_AMOUNT_OF_TABS = 20;
     private int DELAY_BTW_REPEATING = 2000;
     private String email = "igor7301@gmail.com";
-    private String password = "codtQl1fkybgh";
+    private String password = "";
 
     private void loginToSurfEarner() {
         ((SetupModel) getBean("setupTemplateModel")).printTestMessage();
