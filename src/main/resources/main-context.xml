@@ -26,6 +26,7 @@
               <bean class="com.model.setup.SetupTemplateModel" id="setupTemplateModel">
                      <property name="message" value="INITIAL STATE"></property>
               </bean>
+              <bean class="com.data.WebDriverUtil" id="webDriverUtil"/>
        </beans>
 
        <beans profile="mobile">
@@ -43,6 +44,7 @@
 
               <bean class="com.model.setup.SetupTemplateModelMobile" id="setupTemplateModel"/>
               <bean class="com.model.search.web.SearchDromModel" id="searchDromModel"/>
+              <bean class="com.data.WebDriverUtil" id="webDriverUtil"/>
        </beans>
 
 </beans>

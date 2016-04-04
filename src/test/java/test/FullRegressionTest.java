@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 @Listeners(com.application.MyListener.class)
 public class FullRegressionTest extends ApplicationSetup {
 
-    public static final int MAX_AMOUNT_OF_TABS = 20;
+    public static final int MAX_AMOUNT_OF_TABS = 1;
     private int DELAY_BTW_REPEATING = 2000;
     private String email = "igor7301@gmail.com";
     private String password = "";
@@ -61,10 +61,10 @@ public class FullRegressionTest extends ApplicationSetup {
 
                 if (i < MAX_AMOUNT_OF_TABS) {
                     ((SearchRamblerModel) getBean("searchRamblerModel")).chooseRandomResult();
-                    new WebDriverUtil().makeActivityInAllTabs();
+                    ((WebDriverUtil) getBean("webDriverUtil")).makeActivityInAllTabs();
                 }
                 else {
-                    new WebDriverUtil().closeAllTabs();
+                    ((WebDriverUtil) getBean("webDriverUtil")).closeAllTabs();
                     ((SearchRamblerModel) getBean("searchRamblerModel")).makeSearch();
                     i = 0;
                 }
