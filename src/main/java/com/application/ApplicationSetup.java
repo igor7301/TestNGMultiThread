@@ -1,5 +1,6 @@
 package com.application;
 
+import com.model.setup.SetupTemplateModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -42,14 +43,11 @@ public class ApplicationSetup {
     public void beforeTestMethod() {
         Long threadId = Thread.currentThread().getId();
 
-
+        ClassPathXmlApplicationContext applicationContext;
         if (!THREAD_PARAM.containsKey(threadId)) {
 
             Map<PARAM, Object> map = new HashMap<PARAM, Object>();
-            map.put(PARAM.CONTEXT, new ClassPathXmlApplicationContext(CONTEXT_PATH));
-
-
-
+            map.put(PARAM.CONTEXT, applicationContext = new ClassPathXmlApplicationContext(CONTEXT_PATH));
 
 
             try {
@@ -57,7 +55,8 @@ public class ApplicationSetup {
                         DesiredCapabilities.firefox()));
             } catch (Exception e) {
 //                e.printStackTrace();
-                map.put(PARAM.WEBDRIVER, WebDriverFactory.getChromeWebDriver());
+                map.put(PARAM.WEBDRIVER,
+                        WebDriverFactory.getChromeWebDriver(((SetupTemplateModel) applicationContext.getBean("setupTemplateModel")).getWorkPlace()));
 
             }
 

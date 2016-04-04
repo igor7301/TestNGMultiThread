@@ -15,7 +15,7 @@ public class LuxoftWorkPlace extends WorkPlace {
 
     @Override
     String getPathToChromeDriverMac() {
-        throw new RuntimeException("Implement me!!!");
+        throw new RuntimeException("Implement me  for LUXOFT profile!!!");
     }
 
     @Override
@@ -25,6 +25,6 @@ public class LuxoftWorkPlace extends WorkPlace {
 
     @Override
     String getPathToSerfEarnerExtensionMac() {
-        throw new RuntimeException("Implement me!!!");
+        throw new RuntimeException("Implement me  for LUXOFT profile!!!");
     }
 }

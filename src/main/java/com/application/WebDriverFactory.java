@@ -1,5 +1,6 @@
 package com.application;
 
+import com.application.workPlace.WorkPlace;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,29 +29,19 @@ public class WebDriverFactory {
         return new FirefoxDriver();
     }
 
-    public static WebDriver getChromeWebDriver() {
-
-
-
-        DesiredCapabilities capabilities = null;
-//        String pathToChromeDriver = "D:\\Personal\\chromedriver_win32\\chromedriver.exe";
-        String pathToChromeDriver = "/Users/Igor/Downloads/chromedriver";
-//        String pathToSerfEarnerExtension = "D:\\Personal\\extensionSerfEarner.crx";
-        String pathToSerfEarnerExtension = "/Users/Igor/IdeaProjects/extensionSurfEarner.crx";
-        System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
-        capabilities = new DesiredCapabilities();
+    public static WebDriver getChromeWebDriver(WorkPlace workPlace) {
+        System.setProperty("webdriver.chrome.driver", workPlace.getPathToChromeDriver());
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions options = new ChromeOptions();
         WebDriver webDriver;
-
         options.addArguments("start-maximized");
 
         try {
-            options.addExtensions(new File(pathToSerfEarnerExtension));
+            options.addExtensions(new File(workPlace.getPathToSerfEarnerExtension()));
         }
         catch (IllegalArgumentException e) {
-            LOGGER.warn("SerfEarner extension isn't found at the path: " + pathToSerfEarnerExtension + ". Chrome will be ran without extension;");
+            LOGGER.warn("SerfEarner extension isn't found at the path: " + workPlace.getPathToSerfEarnerExtension() + ". Chrome will be ran without extension;");
         }
-
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
         try {
@@ -58,18 +49,13 @@ public class WebDriverFactory {
             webDriver = new ChromeDriver(capabilities);
         }
         catch (IllegalStateException e) {
-            LOGGER.warn("Chrome driver isn't found at the path: " + pathToChromeDriver + ". Firefox driver is running instead.....");
+            LOGGER.warn("Chrome driver isn't found at the path: " + workPlace.getPathToChromeDriver() + ". Firefox driver is running instead.....");
             webDriver = getFirefoxWebDriver();
-
         }
 
         EventFiringWebDriver overridedDriver = new EventFiringWebDriver(webDriver);
-
         overridedDriver.register(new EventListener());
-
         return overridedDriver;
-
-
 
     }
 

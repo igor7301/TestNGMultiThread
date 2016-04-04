@@ -18,6 +18,9 @@
         <slf4j.version>1.6.4</slf4j.version>
         <logback.version>1.0.1</logback.version>
         <!--<logger.level>ERROR</logger.level>-->
+
+        <!--<work.place>LUXOFT</work.place>-->
+        <work.place>HOME</work.place>
     </properties>
 
 
@@ -67,6 +70,16 @@
 
             </plugin>
         </plugins>
+
+
+        <resources>
+            <!--включаем Filtering чтобы мавеновские проперти напрмер <work.place>HOME</work.place>  виделись в Spring-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <!---->
+        </resources>
     </build>
 
     <dependencies>

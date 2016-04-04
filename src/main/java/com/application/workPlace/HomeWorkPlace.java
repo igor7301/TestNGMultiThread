@@ -9,7 +9,7 @@ public class HomeWorkPlace extends WorkPlace {
 
 
     public String getPathToChromeDriverWin() {
-        throw new RuntimeException("Implement me!!!");
+        throw new RuntimeException("Implement me for HOME profile!!!");
     }
 
     public String getPathToChromeDriverMac() {
@@ -18,7 +18,7 @@ public class HomeWorkPlace extends WorkPlace {
 
     @Override
     String getPathToSerfEarnerExtensionWin() {
-        throw new RuntimeException("Implement me!!!");
+        throw new RuntimeException("Implement me  for HOME profile!!!");
     }
 
     @Override

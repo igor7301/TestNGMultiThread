@@ -9,6 +9,7 @@
        <context:component-scan base-package="com"/>
 
 
+
        <beans profile="web">
               <bean class="com.model.search.web.SearchTestModel" id="searchTestModel">
                      <property name="a" value="default"></property>
@@ -25,6 +26,8 @@
               <bean class="com.model.search.web.SearchDromModel" id="searchDromModel"/>
               <bean class="com.model.setup.SetupTemplateModel" id="setupTemplateModel">
                      <property name="message" value="INITIAL STATE"></property>
+                     <!--нужно включить filtering в pom файле чтобы это преперти workPlace было видно через мавен-->
+                     <property name="workPlace" value="${work.place}"/>
               </bean>
               <bean class="com.data.WebDriverUtil" id="webDriverUtil"/>
        </beans>
