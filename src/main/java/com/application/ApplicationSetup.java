@@ -55,9 +55,14 @@ public class ApplicationSetup {
                         DesiredCapabilities.firefox()));
             } catch (Exception e) {
 //                e.printStackTrace();
-                map.put(PARAM.WEBDRIVER,
-                        WebDriverFactory.getChromeWebDriver(((SetupTemplateModel) applicationContext.getBean("setupTemplateModel")).getWorkPlace()));
-
+                try {
+                    map.put(PARAM.WEBDRIVER,
+                            WebDriverFactory.getChromeWebDriver(((SetupTemplateModel) applicationContext.getBean("setupTemplateModel")).getWorkPlace()));
+                }
+                catch (Exception xe) {
+                    map.put(PARAM.WEBDRIVER,
+                            WebDriverFactory.getFirefoxWebDriver());
+                }
             }
 
             THREAD_PARAM.put(threadId, map);
