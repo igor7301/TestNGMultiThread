@@ -1,7 +1,7 @@
 package com.model.search.mobile;
 
 import com.model.search.SearchModel;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 
 /**
  * Created by IKomarov on 31.03.2016.

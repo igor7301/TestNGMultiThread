@@ -40,6 +40,16 @@ public class EventListener implements WebDriverEventListener {
 
     }
 
+    @Override
+    public void beforeNavigateRefresh(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void afterNavigateRefresh(WebDriver webDriver) {
+
+    }
+
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
 
     }
