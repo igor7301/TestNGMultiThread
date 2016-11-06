@@ -34,7 +34,7 @@ public class FullRegressionTest extends ApplicationSetup {
     public void dromProcessing() {
         try {
 
-            ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.omsk.dromProcessing.ru/auto/");
+            ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.omsk.drom.ru/auto/");
             ((SearchDromModel) getBean("searchDromModel")).makeSearch();
             ((SearchDromModel) getBean("searchDromModel")).handleAllResults();
         }
