@@ -7,7 +7,6 @@ import com.model.search.SearchModel;
 import com.model.search.web.SearchDromModel;
 import com.model.search.web.SearchRamblerModel;
 import com.model.setup.SetupModel;
-import com.model.setup.SetupTemplateModel;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -32,16 +31,26 @@ public class FullRegressionTest extends ApplicationSetup {
 
 
     }
+    public void dromProcessing() {
+        try {
+
+            ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.omsk.dromProcessing.ru/auto/");
+            ((SearchDromModel) getBean("searchDromModel")).makeSearch();
+            ((SearchDromModel) getBean("searchDromModel")).handleAllResults();
+        }
+        catch (java.lang.Exception e) {
+            e.printStackTrace();
+            dromProcessing();
+        }
+    }
 
     @Test
     public void testDromSite() {
 
+
         loginToSurfEarner();
 
-        ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.omsk.drom.ru/auto/");
-        ((SearchDromModel) getBean("searchDromModel")).makeSearch();
-            ((SearchDromModel) getBean("searchDromModel")).handleAllResults();
-
+        dromProcessing();
 
     }
 

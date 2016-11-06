@@ -4,8 +4,8 @@ package com.application.workPlace;
  * Created by IKomarov on 04.04.2016.
  */
 public class HomeWorkPlace extends WorkPlace {
-    private  final String pathToChromeDriverMac = "/Users/Igor/Downloads/chromedriver";
-    private  final String pathToSerfEarnerExtensionMac = "/Users/Igor/IdeaProjects/extensionSurfEarner.crx";
+    private  final String pathToChromeDriverMac = "/Users/Igor/IdeaProjects/TestNGMultiThread/chromedriver";
+    private  final String pathToSerfEarnerExtensionMac = "/Users/Igor/IdeaProjects/TestNGMultiThread/extensionSurfEarner.crx";
 
 
     public String getPathToChromeDriverWin() {

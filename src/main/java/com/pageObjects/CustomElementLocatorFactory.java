@@ -18,7 +18,6 @@ public class CustomElementLocatorFactory implements ElementLocatorFactory {
         this.context = context;
     }
 
-      @Override
     public ElementLocator createLocator(Field field) {
        return new CustomElementLocator(context, field, timeOutInSeconds);
     }

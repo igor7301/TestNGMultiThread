@@ -17,6 +17,7 @@ public class EventListener implements WebDriverEventListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(EventListener.class);
 
     public void beforeNavigateTo(String url, WebDriver driver) {
+        System.out.println("Before navigate to " + url + " we can do something here....");
 
     }
 
@@ -40,12 +41,11 @@ public class EventListener implements WebDriverEventListener {
 
     }
 
-    @Override
+
     public void beforeNavigateRefresh(WebDriver webDriver) {
 
     }
 
-    @Override
     public void afterNavigateRefresh(WebDriver webDriver) {
 
     }
