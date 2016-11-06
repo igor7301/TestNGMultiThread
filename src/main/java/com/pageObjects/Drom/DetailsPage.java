@@ -15,11 +15,11 @@ public class DetailsPage extends AbstractPage {
     private WebElement carPhotoGallery;
 
 
-    @FindBy(css = ".fancybox-next span")
+    @FindBy(css = ".pswp__button--arrow--right")
     private WebElement nextButton;
 
 
-    @FindBy(css = ".fancybox-close")
+    @FindBy(css = ".pswp__button--close")
     private WebElement closePhotoGalleryBtn;
 
     public DetailsPage(WebDriver driver) {
