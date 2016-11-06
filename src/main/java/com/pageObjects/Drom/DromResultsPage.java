@@ -16,7 +16,7 @@ public class DromResultsPage extends AbstractPage {
     private List<WebElement> results;
 
 
-    @FindBy(css = ".next")
+    @FindBy(css = ".b-pagination__item_next")
     private WebElement nextPage;
 
 
