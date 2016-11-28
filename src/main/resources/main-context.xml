@@ -17,6 +17,7 @@
               <bean class="com.model.search.web.SearchRamblerModel" id="searchRamblerModel"></bean>
               <bean class="com.model.search.web.SearchYandexModel" id="searchYandexModel"></bean>
               <bean class="com.model.search.web.SearchGoogleModel" id="searchGoogleModel"></bean>
+              <bean class="com.model.search.web.SearchSikuliXGoogleModel" id="searchSikuliXGoogleModel"/>
 
               <bean class="com.data.Data" id="data">
                      <property name="elemForSearch" value="hello world"></property>
@@ -30,6 +31,7 @@
                      <property name="workPlace" value="${work.place}"/>
               </bean>
               <bean class="com.data.WebDriverUtil" id="webDriverUtil"/>
+
        </beans>
 
        <beans profile="mobile">
@@ -39,6 +41,7 @@
               <bean class="com.model.search.mobile.SearchRamblerModelMobile" id="searchRamblerModel"></bean>
               <bean class="com.model.search.mobile.SearchYandexModelMobile" id="searchYandexModel"></bean>
               <bean class="com.model.search.mobile.SearchGoogleModelMobile" id="searchGoogleModel"></bean>
+              <bean class="com.model.search.web.SearchSikuliXGoogleModel" id="searchSikuliXGoogleModel"/>
 
               <bean class="com.data.Data" id="data">
                      <property name="elemForSearch" value="hello world"></property>

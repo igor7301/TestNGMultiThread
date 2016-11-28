@@ -12,6 +12,7 @@
                     <!--<include name="test2"></include>-->
                     <!--<include name="test3"></include>-->
                     <!--<include name="test4"></include>-->
+                    <!--<include name="testSikuliX"></include>-->
                 </methods>
             </class>
 

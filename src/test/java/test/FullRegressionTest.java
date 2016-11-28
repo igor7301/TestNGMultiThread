@@ -153,4 +153,12 @@ public class FullRegressionTest extends ApplicationSetup {
             }
         }
     }
+
+    @Test
+    public void testSikuliX() {
+        ((SetupModel) getBean("setupTemplateModel")).loadURL("http://www.google.com");
+        ((SearchModel) getBean("searchSikuliXGoogleModel")).makeSearch();
+    }
+
+
 }
